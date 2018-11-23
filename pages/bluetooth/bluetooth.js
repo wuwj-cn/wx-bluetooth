@@ -13,7 +13,8 @@ Page({
     loading: false,
     searchingstatus: false,
     receivedata: '',
-    onreceiving: false
+    onreceiving: false,
+    devices: []
   },
   onLoad: function() {
     // var str = "A13";
@@ -49,14 +50,13 @@ Page({
             })
           })
           wx.onBluetoothDeviceFound(function(devices) {
-            console.log(devices)
-            temp.push(devices)
+            // console.log(devices)
+            temp.push(devices.devices[0])
             that.setData({
               devices: temp
             })
-            console.log('发现新蓝牙设备')
-            console.log('设备id' + devices.deviceId)
-            console.log('设备name' + devices.name)
+            // console.log('发现新蓝牙设备')
+            console.log('设备id: ' + devices.devices[0].deviceId + ', 设备name: ' + devices.devices[0].name)
           })
         },
         fail: function(res) {
@@ -133,6 +133,14 @@ Page({
         }
       })
     }
+  },
+  stopSearchBluetooth: function(){
+    wx.stopBluetoothDevicesDiscovery({
+      success: function (res) {
+        console.log("停止蓝牙搜索")
+        console.log(res)
+      }
+    })
   },
   connectTO: function(e) {
     var that = this
