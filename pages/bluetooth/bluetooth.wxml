@@ -17,7 +17,7 @@
       <view class="list-item {{deviceconnected?'deviceconnected':''}}" wx:for="{{ devices }}">
         <text>设备ID:{{item.deviceId}}</text>
         <text>设备名称:{{item.name}}</text>
-        <button id="{{item.deviceId}}" type="default" size="mini" bindtap="connectTO">{{deviceconnected?"已连接":"链接"}}</button>
+        <button id="{{item.deviceId}}" type="default" size="mini" bindtap="connectTO">{{deviceconnected?"已连接":"连接"}}</button>
       </view>
     </view>
   </block>
