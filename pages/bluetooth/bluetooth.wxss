@@ -1,51 +1,41 @@
-view {
-  display: inline-block;
+page {
+  color: #333;
 }
-
-.container {
-  padding: 0;
-  margin: 0;
-  align-items: flex-start;
+.devices_summary {
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 16px;
 }
-
-.section {
-  display: inline-block;
+.device_list {
+  height: 300px;
+  margin: 50px 5px;
+  margin-top: 0;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  width: auto;
+}
+.device_item {
+  border-bottom: 1px solid #EEE;
+  padding: 10px;
+  color: #666;
+}
+.device_item_hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+.connected_info {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  position: relative;
+  background-color: #F0F0F0;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-bottom: env(safe-area-inset-bottom);
+  font-size: 14px;
+  min-height: 100px;
+  box-shadow: 0px 0px 3px 0px;
 }
-
-.content {
-  margin: auto;
-  padding: auto;
+.connected_info .operation {
   position: absolute;
-  top: 5px;
-  left: 10px;
-}
-
-.switch {
-  position: relative;
-  float: right;
-  right: 0px;
-}
-
-button {
-  background: red\;
-}
-
-.list-item {
-  margin-top: 20rpx;
-  margin-bottom: 20rpx; 
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  border: 1px dashed #000;
-}
-
-.list-item text {
-   margin-top: 10rpx;
-}
-
-
-.list-item button {
-  margin-right: 10rpx;
+  display: inline-block;
+  right: 30px;
 }
